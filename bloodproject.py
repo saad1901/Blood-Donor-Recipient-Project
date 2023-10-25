@@ -24,15 +24,6 @@ cities = ["Mumbai","Pune","Nagpur","Thane","Nashik","Aurangabad","Solapur","Amra
           "Wai","Sillod","Wardha","Malkapur","Wani",]
 
 
-
-st.markdown("""
-<style>
-.css-cio0dv.ea3mdgi1 {
-    visibility: hidden;
-}
-</style>
-""", unsafe_allow_html=True)
-
 st.sidebar.subheader('WELCOME')
 operation = st.sidebar.radio("Select", ["Add Donor", "Recipient",'About/Contact Us','Admin Panel'])
        
