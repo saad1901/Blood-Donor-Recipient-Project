@@ -99,14 +99,14 @@ elif operation == 'Recipient':
         col1,col2 = st.columns(2)
         # number = col1.text_input('Enter Your Phone Number',value= '+91 ')
         blood = col1.selectbox('Select Blood Group', blood_list)
-        city = col2.selectbox('Select City' , cities)
+        city0 = col2.selectbox('Select City' , cities)
         sub_button = st.form_submit_button('Find')
     
     
 
     if sub_button:
     # Query the database to fetch data based on city and blood type
-        cursor.execute("SELECT name, number, blood FROM blooddatabase WHERE city = ? AND blood = ?", (city, blood,))
+        cursor.execute("SELECT name, number, blood FROM blooddatabase WHERE city = ? AND blood = ?", (city0, blood,))
         result = cursor.fetchall()
         for row in result:
             name, number, blood = row
@@ -115,7 +115,7 @@ elif operation == 'Recipient':
                 'Phone': number,
                 'Blood Group': blood
                 })
-        cursor.execute("SELECT name, number, blood,city FROM blooddatabase WHERE city != ? AND blood = ?", (city,blood,))
+        cursor.execute("SELECT name, number, blood,city FROM blooddatabase WHERE city != ? AND blood = ?", (city0,blood,))
         result2 = cursor.fetchall()
         for row in result2:
             name, number, blood,city = row
@@ -123,15 +123,15 @@ elif operation == 'Recipient':
                 'Name': name,
                 'Phone': number,
                 'Blood Group': blood,
-                'City': city
+                'City': city0
             })
 
     if data1:
-        st.subheader(f'Available Donors for {blood}/O+ in {city}')
+        st.subheader(f'Available Donors for {blood}/O+ in {city0}')
         st.table(pd.DataFrame(data1))
     else:
         if sub_button:
-            st.write(f'Not Any {blood} Donor Available in {city}')
+            st.write(f'Not Any {blood} Donor Available in {city0}')
     if data2:        
         st.subheader(f'Available Donors for {blood}/O+ Across Maharashtra')
         st.table(pd.DataFrame(data2))
