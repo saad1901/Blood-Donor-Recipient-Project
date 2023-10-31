@@ -148,7 +148,6 @@ elif operation == 'Recipient':
 elif operation == 'Admin Panel':
     st.success("Thank You For Visiting (under Construction)")
     st.header('Admin Panel')
-    # df = pd.read_excel(path)
     user_credentials = {
         'saad': 'saad',
         'genu': 'genu',
