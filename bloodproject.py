@@ -9,6 +9,8 @@ import sqlite3
 connection = sqlite3.connect('bloodbase.db')
 cursor = connection.cursor()
 
+
+
 key0 = 0
 flag = 1
 flag0 = 0
@@ -90,7 +92,8 @@ if operation == 'Add Donor':
 
 ###################################################################
 elif operation == 'Recipient':
-
+    
+    st.warning('App is Under Construction in this section')
     data1 = []
     data2 = []
     # data3 = []
