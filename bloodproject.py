@@ -127,7 +127,7 @@ elif operation == 'Recipient':
             })
 
     if data1:
-        st.subheader(f'Available Donors for {blood}/O+ in {city}')
+        st.subheader(f'Available Donors for {blood}/O+ in {city0}')
         st.table(pd.DataFrame(data1))
     else:
         if sub_button:
