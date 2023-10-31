@@ -146,8 +146,9 @@ elif operation == 'Recipient':
 ###################################################################
 
 elif operation == 'Admin Panel':
+    st.success("Thank You For Visiting (under Construction)")
     st.header('Admin Panel')
-    df = pd.read_excel(path)
+    # df = pd.read_excel(path)
     user_credentials = {
         'saad': 'saad',
         'genu': 'genu',
@@ -173,7 +174,7 @@ elif operation == 'Admin Panel':
             error.empty()
         if key1 == 1:
                 st.subheader('All Donors !')
-                st.table(df)
+                # st.table(df)
                 logout = st.button('logout')
                 if logout:
                     st.epmty()
@@ -190,7 +191,7 @@ elif operation == 'About/Contact Us':
     b1.text_input('Enter Your Mail-id')
     st.text_area('Write a Message',max_chars=200)
     # st.link('dss.com')
-
+connection.commit()
 connection.close()
 
 # if about:
